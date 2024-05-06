@@ -106,8 +106,10 @@ const Details = ({ img, price, name, id, details, secondScreenOption }) => {
               aria-label="Chat on WhatsApp"
               href="https://wa.me/+8801521566835"
             >
-              <img
+              <Image
                 alt="Chat on WhatsApp"
+                width={"190"}
+                height={"190"}
                 src="../images/WhatsAppButtonGreenMedium.svg"
               />
             </a>
