@@ -1,7 +1,25 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useCart } from "../context/cartContext";
+
+const subscriptionBoxVarint = {
+  hidden: {
+    opacity: 0,
+    scale: 0.3,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 0.6,
+      delay: 0.2,
+    },
+  },
+};
 
 const Details = ({ img, price, name, id, details, secondScreenOption }) => {
   const [finalPrice, setFinalPrice] = useState(price.split("-")[0]);
@@ -47,7 +65,13 @@ const Details = ({ img, price, name, id, details, secondScreenOption }) => {
 
   return (
     <>
-      <div className="flex flex-col items-center m-7 my-12 md:flex-row md:my-40 lg:px-16 xl:px-28">
+      <motion.div
+        variants={subscriptionBoxVarint}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="flex flex-col items-center w-fit m-7 my-12 md:flex-row md:my-40 lg:px-16 xl:px-28"
+      >
         <figure className="object-cover overflow-hidden rounded-3xl w-full z-0 md:relative md:left-16 shadow-2xl">
           <Image src={img} height={"700"} width={"700"} alt="" />
         </figure>
@@ -146,7 +170,7 @@ const Details = ({ img, price, name, id, details, secondScreenOption }) => {
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
