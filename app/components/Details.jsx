@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useCart } from "../context/cartContext";
 
@@ -48,7 +49,7 @@ const Details = ({ img, price, name, id, details, secondScreenOption }) => {
     <>
       <div className="flex flex-col items-center m-7 my-12 md:flex-row md:my-40 lg:px-16 xl:px-28">
         <figure className="object-cover overflow-hidden rounded-3xl w-full z-0 md:relative md:left-16 shadow-2xl">
-          <img src={img} alt="" />
+          <Image src={img} height={"700"} width={"700"} alt="" />
         </figure>
         <div className="flex flex-col justify-center relative -top-16 bg-slate-500 backdrop-blur-sm bg-white/5 p-7 rounded-3xl z-1 sm:w-3/4 md:top-0 md:right-16">
           <div className="flex gap-2 items-center justify-between my-3">

@@ -1,4 +1,5 @@
 // import bkashImage from "."; // Import the image
+import Image from "next/image";
 
 const page = ({ searchParams }) => {
   const totalPrice = searchParams.totalPrice;
@@ -9,7 +10,12 @@ const page = ({ searchParams }) => {
         <div className="flex flex-col items-center md:w-1/2 lg:w-1/3">
           <h1 className="my-5 text-lg font-bold">CHECKOUT</h1>
           <figure className="object-cover w-3/4 overflow-hidden rounded-3xl md:p-0">
-            <img src="./images/bkash.jpg" alt="" srcset="" />
+            <Image
+              src="/images/bkash.jpg"
+              height={"700"}
+              width={"700"}
+              alt=""
+            />
           </figure>
         </div>
         <div className="flex flex-col items-center md:w-1/2 lg:w-2/3">

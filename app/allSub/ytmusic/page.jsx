@@ -1,7 +1,7 @@
 import Details from "../../components/Details";
 
 const page = () => {
-  const img = "../images/ytmusic-banner.jpg";
+  const img = "/images/ytmusic-banner.jpg";
 
   return (
     <>

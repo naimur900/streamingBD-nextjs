@@ -1,12 +1,14 @@
+import Image from "next/image";
+
 const Footer = () => {
   return (
     <footer id="footer" className="footer p-10 bg-neutral text-neutral-content">
       <aside>
-        <img
-          className="w-16"
-          src="./images/streamingBDIcon.svg"
+        <Image
+          src="/images/streamingBDIcon.svg"
+          height={"75"}
+          width={"75"}
           alt=""
-          srcset=""
         />
         <p>
           StreamingBD Ltd.
@@ -22,19 +24,19 @@ const Footer = () => {
             aria-label="Chat on WhatsApp"
             href="https://wa.me/+8801521566835"
           >
-            <img
-              src="./images/whatsAppIcon.svg"
-              className="w-8"
+            <Image
+              src="/images/whatsAppIcon.svg"
+              height={"35"}
+              width={"35"}
               alt=""
-              srcset=""
             />
           </a>
           <a>
-            <img
-              src="./images/facebookIcon.svg"
-              className="w-8"
+            <Image
+              src="/images/facebookIcon.svg"
+              height={"35"}
+              width={"35"}
               alt=""
-              srcset=""
             />
           </a>
         </div>

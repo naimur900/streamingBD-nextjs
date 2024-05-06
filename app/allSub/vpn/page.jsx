@@ -1,7 +1,7 @@
 import Details from "../../components/Details";
 
 const page = () => {
-  const img = "../images/vpn2.jpg";
+  const img = "/images/vpn2.jpg";
 
   return (
     <>
