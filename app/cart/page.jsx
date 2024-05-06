@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useCart } from "../context/cartContext";
 import Cart from "./Cart";
 
-const page = () => {
+const CartPage = () => {
   const value = useCart();
   //   console.log(value);
   const { cartState, cartDispatch } = value;
@@ -70,4 +70,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default CartPage;

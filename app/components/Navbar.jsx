@@ -176,7 +176,7 @@ const Navbar = () => {
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#quillbot">
-              <img
+              <Image
                 src="/images/quillbotIcon.webp"
                 height={"30"}
                 width={"30"}
