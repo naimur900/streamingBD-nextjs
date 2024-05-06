@@ -9,7 +9,7 @@ const SubscriptionBox = ({ img, id, headline, price, detail, endpoint }) => {
         className="flex flex-col items-center m-5 sm:flex-row sm:justify-start md:m-12 lg:m-20 xl:m-32"
       >
         <figure className="object-cover overflow-hidden rounded-3xl w-full sm:m-5 sm:w-1/2 sm:relative sm:left-16 shadow-2xl">
-          <Image src={img} width="700" height="700" />
+          <Image src={img} width="700" height="700" alt="" />
         </figure>
         <div className="w-5/6 m-2 p-5 flex flex-col items-center sm:m-0 sm:w-1/2 2xl:p-16 relative -top-16 bg-slate-500 backdrop-blur-sm bg-white/10 rounded-3xl sm:top-0 sm:right-16">
           <div>

@@ -34,7 +34,7 @@ const SubscriptionBox2 = ({
           </Link>
         </div>
         <figure className="object-cover overflow-hidden rounded-3xl w-full sm:m-5 sm:w-1/2 sm:relative sm:right-16 shadow-2xl">
-          <Image src={img} width="700" height="700" />
+          <Image src={img} width="700" height="700" alt="" />
         </figure>
       </div>
     </>

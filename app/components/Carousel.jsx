@@ -1,7 +1,7 @@
 const Carousel = () => {
   return (
     <>
-      <div className="carousel rounded-box m-10">
+      {/* <div className="carousel rounded-box m-10">
         <div className="carousel-item">
           <img
             src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
@@ -44,7 +44,7 @@ const Carousel = () => {
             alt="Burger"
           />
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
