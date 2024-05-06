@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const SubscriptionBox2 = ({
@@ -33,7 +34,7 @@ const SubscriptionBox2 = ({
           </Link>
         </div>
         <figure className="object-cover overflow-hidden rounded-3xl w-full sm:m-5 sm:w-1/2 sm:relative sm:right-16 shadow-2xl">
-          <img loading="lazy" src={img} alt="" />
+          <Image src={img} width="700" height="700" />
         </figure>
       </div>
     </>

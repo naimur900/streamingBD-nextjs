@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useCart } from "../context/cartContext";
@@ -105,89 +106,90 @@ const Navbar = () => {
           </li> */}
           <li onClick={toggleDropdown}>
             <Link href="/#netflix">
-              <img
-                src="./images/netflixIcon.svg"
-                className="w-7"
+              <Image
+                src="/images/netflixIcon.svg"
+                height={"30"}
+                width={"30"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#amazon">
-              <img
-                src="./images/primeVideoIcon.svg"
-                className="w-9"
+              <Image
+                src="/images/primeVideoIcon.svg"
+                height={"35"}
+                width={"35"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#ytmusic">
-              <img
-                src="./images/youtubeIcon.svg"
-                className="w-8"
+              <Image
+                src="/images/youtubeIcon.svg"
+                height={"30"}
+                width={"30"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#spotify">
-              <img
-                src="./images/spotifyIcon.svg"
-                className="w-7"
+              <Image
+                src="/images/spotifyIcon.svg"
+                height={"30"}
+                width={"30"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#hbomax">
-              <img
-                src="./images/hboMaxIcon.svg"
-                className="w-8 text-white"
+              <Image
+                src="/images/hboMaxIcon.svg"
+                height={"30"}
+                width={"30"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#disneyplus">
-              <img
-                src="./images/disneyPlusIcon.svg"
-                className="w-10 text-white"
+              <Image
+                src="/images/disneyPlusIcon.svg"
+                height={"35"}
+                width={"35"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#chatgpt">
-              <img
-                src="./images/chatgptIcon.svg"
-                className="w-8 text-white"
+              <Image
+                src="/images/chatgptIcon.svg"
+                height={"30"}
+                width={"30"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#quillbot">
               <img
-                src="./images/quillbotIcon.webp"
-                className="w-8 text-white"
+                src="/images/quillbotIcon.webp"
+                height={"30"}
+                width={"30"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#vpn">
-              <img
-                src="./images/vpnIcon.svg"
-                className="w-8 text-white"
+              <Image
+                src="/images/vpnIcon.svg"
+                height={"30"}
+                width={"30"}
                 alt=""
                 srcset=""
               />
@@ -195,11 +197,11 @@ const Navbar = () => {
           </li>
           <li onClick={toggleDropdown}>
             <Link href="/#combo">
-              <img
-                src="./images/comboIcon.svg"
-                className="w-10 text-white"
+              <Image
+                src="/images/comboIcon.svg"
+                height={"40"}
+                width={"40"}
                 alt=""
-                srcset=""
               />
             </Link>
           </li>
