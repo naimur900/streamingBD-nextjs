@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./Button";
 
 const subscriptionBoxVarint = {
   hidden: {
@@ -15,7 +16,8 @@ const subscriptionBoxVarint = {
     transition: {
       type: "spring",
       duration: 0.6,
-      delay: 0.2,
+      delay: 0.1,
+      bounce: 0.3,
     },
   },
 };
@@ -44,11 +46,11 @@ const SubscriptionBox = ({ img, id, headline, price, detail, endpoint }) => {
             </p>
             <p className="xl:text-lg">{detail}</p>
           </div>
-          <Link
-            className="btn btn-primary font-bold my-7 w-1/2 xl:w-1/3 xl:text-lg"
-            href={`/allSub/${endpoint}`}
-          >
-            <button>BUY NOW</button>
+          <Link href={`/allSub/${endpoint}`}>
+            <Button
+              classes={"btn btn-primary font-bold my-7 xl:text-lg"}
+              children={"BUY NOW"}
+            />
           </Link>
         </div>
       </motion.div>
