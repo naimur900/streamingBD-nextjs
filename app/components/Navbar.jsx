@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useCart } from "../context/cartContext";
@@ -8,15 +9,29 @@ const dropDownVarint = {
   hidden: {
     opacity: 0,
     scale: 0.3,
+    x: -60,
+    y: -50,
   },
   visible: {
+    x: 0,
+    y: 0,
     opacity: 1,
     scale: 1,
     transition: {
+      staggerChildren: 0.2,
       type: "spring",
-      duration: 0.4,
+      duration: 0.2,
       delay: 0.1,
     },
+  },
+};
+
+const dropDownOptionVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
   },
 };
 
@@ -25,7 +40,8 @@ const Navbar = () => {
   const { cartState } = value;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage dropdown visibility
 
-  const toggleDropdown = () => {
+  const toggleDropdown = (e) => {
+    e.stopPropagation(); // Prevent event propagation
     setIsDropdownOpen(!isDropdownOpen);
   };
 
@@ -41,7 +57,7 @@ const Navbar = () => {
             tabIndex={0}
             role="button"
             className="lg:hidden text-primary"
-            onClick={toggleDropdown} // Add onClick event to toggle dropdown
+            onClick={(e) => toggleDropdown(e)} // Add onClick event to toggle dropdown
           >
             <div
               tabIndex={0}
@@ -69,14 +85,14 @@ const Navbar = () => {
             animate={isDropdownOpen ? "visible" : "hidden"} // Update animate property based on dropdown state
             variants={dropDownVarint} // Update variants property
             tabIndex={0}
-            className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-neutral rounded-box w-52 border-2 border-dashed border-primary`}
+            className={`menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-neutral rounded-box w-52 border-2 border-solid`}
           >
-            <li>
+            <motion.li variants={dropDownOptionVariant}>
               <Link onClick={toggleDropdown} href="/">
                 Home
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={dropDownOptionVariant}>
               <a>Subscriptions</a>
               <ul className="p-2">
                 <li onClick={toggleDropdown}>
@@ -110,10 +126,10 @@ const Navbar = () => {
                   <Link href="/#combo">Combo</Link>
                 </li>
               </ul>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li ariants={dropDownOptionVariant}>
               <Link href="/#footer">Contact</Link>
-            </li>
+            </motion.li>
           </motion.ul>
         </div>
         <Link href={"/"} className="btn btn-ghost text-xl text-white">
@@ -121,7 +137,115 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        {/* Add other menu items with onClick event */}
+        <ul className="menu menu-horizontal flex items-center">
+          {/* <li>
+            <Link href="/">Home</Link>
+          </li> */}
+          <li>
+            <Link href="/#netflix">
+              <Image
+                src="/images/netflixIcon.svg"
+                height={"30"}
+                width={"30"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#amazon">
+              <Image
+                src="/images/primeVideoIcon.svg"
+                height={"35"}
+                width={"35"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#ytmusic">
+              <Image
+                src="/images/youtubeIcon.svg"
+                height={"30"}
+                width={"30"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#spotify">
+              <Image
+                src="/images/spotifyIcon.svg"
+                height={"30"}
+                width={"30"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#hbomax">
+              <Image
+                src="/images/hboMaxIcon.svg"
+                height={"30"}
+                width={"30"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#disneyplus">
+              <Image
+                src="/images/disneyPlusIcon.svg"
+                height={"35"}
+                width={"35"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#chatgpt">
+              <Image
+                src="/images/chatgptIcon.svg"
+                height={"30"}
+                width={"30"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#quillbot">
+              <Image
+                src="/images/quillbotIcon.webp"
+                height={"30"}
+                width={"30"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#vpn">
+              <Image
+                src="/images/vpnIcon.svg"
+                height={"30"}
+                width={"30"}
+                alt=""
+                srcset=""
+              />
+            </Link>
+          </li>
+          <li onClick={toggleDropdown}>
+            <Link href="/#combo">
+              <Image
+                src="/images/comboIcon.svg"
+                height={"40"}
+                width={"40"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li className="font-semibold">
+            <Link href="/#footer">Contact</Link>
+          </li>
+        </ul>
       </div>
       <div className="navbar-end">
         {cartState.cart.length > 0 ? (
@@ -263,115 +387,115 @@ export default Navbar;
 //         </Link>
 //       </div>
 //       <div className="navbar-center hidden lg:flex">
-//         <ul className="menu menu-horizontal flex items-center">
-//           {/* <li>
-//             <Link href="/">Home</Link>
-//           </li> */}
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#netflix">
-//               <Image
-//                 src="/images/netflixIcon.svg"
-//                 height={"30"}
-//                 width={"30"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#amazon">
-//               <Image
-//                 src="/images/primeVideoIcon.svg"
-//                 height={"35"}
-//                 width={"35"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#ytmusic">
-//               <Image
-//                 src="/images/youtubeIcon.svg"
-//                 height={"30"}
-//                 width={"30"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#spotify">
-//               <Image
-//                 src="/images/spotifyIcon.svg"
-//                 height={"30"}
-//                 width={"30"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#hbomax">
-//               <Image
-//                 src="/images/hboMaxIcon.svg"
-//                 height={"30"}
-//                 width={"30"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#disneyplus">
-//               <Image
-//                 src="/images/disneyPlusIcon.svg"
-//                 height={"35"}
-//                 width={"35"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#chatgpt">
-//               <Image
-//                 src="/images/chatgptIcon.svg"
-//                 height={"30"}
-//                 width={"30"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#quillbot">
-//               <Image
-//                 src="/images/quillbotIcon.webp"
-//                 height={"30"}
-//                 width={"30"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#vpn">
-//               <Image
-//                 src="/images/vpnIcon.svg"
-//                 height={"30"}
-//                 width={"30"}
-//                 alt=""
-//                 srcset=""
-//               />
-//             </Link>
-//           </li>
-//           <li onClick={toggleDropdown}>
-//             <Link href="/#combo">
-//               <Image
-//                 src="/images/comboIcon.svg"
-//                 height={"40"}
-//                 width={"40"}
-//                 alt=""
-//               />
-//             </Link>
-//           </li>
-//           <li className="font-semibold">
-//             <Link href="/#footer">Contact</Link>
-//           </li>
-//         </ul>
+// <ul className="menu menu-horizontal flex items-center">
+//   {/* <li>
+//     <Link href="/">Home</Link>
+//   </li> */}
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#netflix">
+//       <Image
+//         src="/images/netflixIcon.svg"
+//         height={"30"}
+//         width={"30"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#amazon">
+//       <Image
+//         src="/images/primeVideoIcon.svg"
+//         height={"35"}
+//         width={"35"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#ytmusic">
+//       <Image
+//         src="/images/youtubeIcon.svg"
+//         height={"30"}
+//         width={"30"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#spotify">
+//       <Image
+//         src="/images/spotifyIcon.svg"
+//         height={"30"}
+//         width={"30"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#hbomax">
+//       <Image
+//         src="/images/hboMaxIcon.svg"
+//         height={"30"}
+//         width={"30"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#disneyplus">
+//       <Image
+//         src="/images/disneyPlusIcon.svg"
+//         height={"35"}
+//         width={"35"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#chatgpt">
+//       <Image
+//         src="/images/chatgptIcon.svg"
+//         height={"30"}
+//         width={"30"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#quillbot">
+//       <Image
+//         src="/images/quillbotIcon.webp"
+//         height={"30"}
+//         width={"30"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#vpn">
+//       <Image
+//         src="/images/vpnIcon.svg"
+//         height={"30"}
+//         width={"30"}
+//         alt=""
+//         srcset=""
+//       />
+//     </Link>
+//   </li>
+//   <li onClick={toggleDropdown}>
+//     <Link href="/#combo">
+//       <Image
+//         src="/images/comboIcon.svg"
+//         height={"40"}
+//         width={"40"}
+//         alt=""
+//       />
+//     </Link>
+//   </li>
+//   <li className="font-semibold">
+//     <Link href="/#footer">Contact</Link>
+//   </li>
+// </ul>
 //       </div>
 //       <div className="navbar-end">
 //         {cartState.cart.length > 0 ? (
@@ -390,44 +514,3 @@ export default Navbar;
 // };
 
 // export default Navbar;
-
-// {
-//   /* <ul className="menu menu-horizontal px-1">
-// <li>
-//   <Link href="/">Home</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#netflix">Netflix</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#amazon">Amazon Prime</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#ytmusic">Youtube Music</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#spotify">Spotify</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#hbomax">HBO Max</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#disneyplus">Disney Plus</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#chatgpt">Chat GPT+</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#quillbot">Quillbot Premium</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#vpn">VPN</Link>
-// </li>
-// <li onClick={toggleDropdown}>
-//   <Link href="/#combo">Combo</Link>
-// </li>
-// <li>
-//   <a>Contact</a>
-// </li>
-// </ul> */
-// }
