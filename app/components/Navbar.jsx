@@ -43,6 +43,7 @@ const Navbar = () => {
   const toggleDropdown = (e) => {
     e.stopPropagation(); // Prevent event propagation
     setIsDropdownOpen(!isDropdownOpen);
+    // console.log("Clicked", e);
   };
 
   useEffect(() => {
@@ -50,14 +51,14 @@ const Navbar = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div className="navbar bg-neutral z-50">
-      <div className="navbar-start ">
-        <div className="dropdown z-50">
+    <div className="navbar bg-neutral">
+      <div className="navbar-start " onClick={(e) => toggleDropdown(e)}>
+        <div className="dropdown">
           <div
             tabIndex={0}
             role="button"
             className="lg:hidden text-primary"
-            onClick={(e) => toggleDropdown(e)} // Add onClick event to toggle dropdown
+            // onClick={(e) => toggleDropdown(e)} // Add onClick event to toggle dropdown
           >
             <div
               tabIndex={0}
@@ -88,41 +89,41 @@ const Navbar = () => {
             className={`menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-neutral rounded-box w-52 border-2 border-solid`}
           >
             <motion.li variants={dropDownOptionVariant}>
-              <Link onClick={toggleDropdown} href="/">
+              <Link onClick={(e) => toggleDropdown(e)} href="/">
                 Home
               </Link>
             </motion.li>
             <motion.li variants={dropDownOptionVariant}>
               <a>Subscriptions</a>
               <ul className="p-2">
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#netflix">Netflix</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#amazon">Amazon Prime</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#ytmusic">Youtube Music</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#spotify">Spotify</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#hbomax">HBO Max</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#disneyplus">Disney Plus</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#chatgpt">Chat GPT+</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#quillbot">Quillbot Premium</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#vpn">VPN</Link>
                 </li>
-                <li onClick={toggleDropdown}>
+                <li onClick={(e) => toggleDropdown(e)}>
                   <Link href="/#combo">Combo</Link>
                 </li>
               </ul>
