@@ -47,10 +47,9 @@ const SubscriptionBox = ({ img, id, headline, price, detail, endpoint }) => {
             <p className="xl:text-lg">{detail}</p>
           </div>
           <Link href={`/allSub/${endpoint}`}>
-            <Button
-              classes={"btn btn-primary font-bold my-7 xl:text-lg"}
-              children={"BUY NOW"}
-            />
+            <Button classes={"btn btn-primary font-bold my-7 xl:text-lg"}>
+              BUY NOW
+            </Button>
           </Link>
         </div>
       </motion.div>
