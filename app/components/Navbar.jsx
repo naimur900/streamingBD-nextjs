@@ -8,7 +8,7 @@ import { useCart } from "../context/cartContext";
 const dropDownVarint = {
   hidden: {
     opacity: 0,
-    scale: 0.3,
+    scale: 0.1,
     x: -60,
     y: -50,
   },
@@ -40,10 +40,19 @@ const Navbar = () => {
   const { cartState } = value;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage dropdown visibility
 
-  const toggleDropdown = (e) => {
+  // const toggleDropdown = (e) => {
+  //   // e.stopPropagation(); // Prevent event propagation
+  //   setIsDropdownOpen(!isDropdownOpen);
+  //   // console.log("Clicked", e);
+  // };
+
+  // const handleDropdown = ()=>{
+
+  // }
+
+  const handleDropdownOption = (e) => {
     e.stopPropagation(); // Prevent event propagation
     setIsDropdownOpen(!isDropdownOpen);
-    // console.log("Clicked", e);
   };
 
   useEffect(() => {
@@ -52,12 +61,17 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-neutral">
-      <div className="navbar-start " onClick={(e) => toggleDropdown(e)}>
-        <div className="dropdown">
+      <div className="navbar-start ">
+        <div
+          className="dropdown"
+          onClick={() => {
+            setIsDropdownOpen(!isDropdownOpen);
+          }}
+        >
           <div
             tabIndex={0}
             role="button"
-            className="lg:hidden text-primary"
+            className="lg:hidden text-primary hover:drop-shadow-2xl"
             // onClick={(e) => toggleDropdown(e)} // Add onClick event to toggle dropdown
           >
             <div
@@ -89,41 +103,41 @@ const Navbar = () => {
             className={`menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-neutral rounded-box w-52 border-2 border-solid`}
           >
             <motion.li variants={dropDownOptionVariant}>
-              <Link onClick={(e) => toggleDropdown(e)} href="/">
+              <Link onClick={(e) => handleDropdownOption(e)} href="/">
                 Home
               </Link>
             </motion.li>
             <motion.li variants={dropDownOptionVariant}>
               <a>Subscriptions</a>
               <ul className="p-2">
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#netflix">Netflix</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#amazon">Amazon Prime</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#ytmusic">Youtube Music</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#spotify">Spotify</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#hbomax">HBO Max</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#disneyplus">Disney Plus</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#chatgpt">Chat GPT+</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#quillbot">Quillbot Premium</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#vpn">VPN</Link>
                 </li>
-                <li onClick={(e) => toggleDropdown(e)}>
+                <li onClick={(e) => handleDropdownOption(e)}>
                   <Link href="/#combo">Combo</Link>
                 </li>
               </ul>
@@ -152,7 +166,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#amazon">
               <Image
                 src="/images/primeVideoIcon.svg"
@@ -162,7 +176,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#ytmusic">
               <Image
                 src="/images/youtubeIcon.svg"
@@ -172,7 +186,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#spotify">
               <Image
                 src="/images/spotifyIcon.svg"
@@ -182,7 +196,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#hbomax">
               <Image
                 src="/images/hboMaxIcon.svg"
@@ -192,7 +206,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#disneyplus">
               <Image
                 src="/images/disneyPlusIcon.svg"
@@ -202,7 +216,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#chatgpt">
               <Image
                 src="/images/chatgptIcon.svg"
@@ -212,7 +226,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#quillbot">
               <Image
                 src="/images/quillbotIcon.webp"
@@ -222,7 +236,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#vpn">
               <Image
                 src="/images/vpnIcon.svg"
@@ -233,7 +247,7 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li onClick={toggleDropdown}>
+          <li>
             <Link href="/#combo">
               <Image
                 src="/images/comboIcon.svg"
