@@ -40,16 +40,6 @@ const Navbar = () => {
   const { cartState } = value;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage dropdown visibility
 
-  // const toggleDropdown = (e) => {
-  //   // e.stopPropagation(); // Prevent event propagation
-  //   setIsDropdownOpen(!isDropdownOpen);
-  //   // console.log("Clicked", e);
-  // };
-
-  // const handleDropdown = ()=>{
-
-  // }
-
   const handleDropdownOption = (e) => {
     e.stopPropagation(); // Prevent event propagation
     setIsDropdownOpen(!isDropdownOpen);
@@ -111,34 +101,23 @@ const Navbar = () => {
               <a>Subscriptions</a>
               <ul className="p-2">
                 <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#netflix">Netflix</Link>
+                  <Link href="/#videoStreamingServices">
+                    Video Streaming Services
+                  </Link>
                 </li>
                 <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#amazon">Amazon Prime</Link>
+                  <Link href="/#musicStreamingServices">
+                    Music Streaming Services
+                  </Link>
                 </li>
                 <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#ytmusic">Youtube Music</Link>
+                  <Link href="/#educationalServices">Educational Services</Link>
                 </li>
                 <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#spotify">Spotify</Link>
+                  <Link href="/#vpnServices">VPN Services</Link>
                 </li>
                 <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#hbomax">HBO Max</Link>
-                </li>
-                <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#disneyplus">Disney Plus</Link>
-                </li>
-                <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#chatgpt">Chat GPT+</Link>
-                </li>
-                <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#quillbot">Quillbot Premium</Link>
-                </li>
-                <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#vpn">VPN</Link>
-                </li>
-                <li onClick={(e) => handleDropdownOption(e)}>
-                  <Link href="/#combo">Combo</Link>
+                  <Link href="/#aiTools">AI Tools</Link>
                 </li>
               </ul>
             </motion.li>
@@ -153,13 +132,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal flex items-center">
-          {/* <li>
-            <Link href="/">Home</Link>
-          </li> */}
           <li>
-            <Link href="/#netflix">
+            <Link href="/">
               <Image
-                src="/images/netflixIcon.svg"
+                src="/images/allSVG/home.svg"
                 height={"30"}
                 width={"30"}
                 alt=""
@@ -167,9 +143,19 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/#amazon">
+            <Link href="/#videoStreamingServices">
               <Image
-                src="/images/primeVideoIcon.svg"
+                src="/images/allSVG/videostreamingservices.svg"
+                height={"30"}
+                width={"30"}
+                alt=""
+              />
+            </Link>
+          </li>
+          <li>
+            <Link href="/#musicStreamingServices">
+              <Image
+                src="/images/allSVG/musicstreamingservices.svg"
                 height={"35"}
                 width={"35"}
                 alt=""
@@ -177,9 +163,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/#ytmusic">
+            <Link href="/#educationalServices">
               <Image
-                src="/images/youtubeIcon.svg"
+                src="/images/allSVG/educationalservices.svg"
                 height={"30"}
                 width={"30"}
                 alt=""
@@ -187,9 +173,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/#spotify">
+            <Link href="/#vpnServices">
               <Image
-                src="/images/spotifyIcon.svg"
+                src="/images/allSVG/vpnservices.svg"
                 height={"30"}
                 width={"30"}
                 alt=""
@@ -197,62 +183,11 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/#hbomax">
+            <Link href="/#aiTools">
               <Image
-                src="/images/hboMaxIcon.svg"
+                src="/images/allSVG/aitools.svg"
                 height={"30"}
                 width={"30"}
-                alt=""
-              />
-            </Link>
-          </li>
-          <li>
-            <Link href="/#disneyplus">
-              <Image
-                src="/images/disneyPlusIcon.svg"
-                height={"35"}
-                width={"35"}
-                alt=""
-              />
-            </Link>
-          </li>
-          <li>
-            <Link href="/#chatgpt">
-              <Image
-                src="/images/chatgptIcon.svg"
-                height={"30"}
-                width={"30"}
-                alt=""
-              />
-            </Link>
-          </li>
-          <li>
-            <Link href="/#quillbot">
-              <Image
-                src="/images/quillbotIcon.webp"
-                height={"30"}
-                width={"30"}
-                alt=""
-              />
-            </Link>
-          </li>
-          <li>
-            <Link href="/#vpn">
-              <Image
-                src="/images/vpnIcon.svg"
-                height={"30"}
-                width={"30"}
-                alt=""
-                srcset=""
-              />
-            </Link>
-          </li>
-          <li>
-            <Link href="/#combo">
-              <Image
-                src="/images/comboIcon.svg"
-                height={"40"}
-                width={"40"}
                 alt=""
               />
             </Link>

@@ -2,7 +2,10 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="footer p-10 bg-neutral text-neutral-content">
+    <footer
+      id="footer"
+      className="flex flex-col sm:flex-row sm:justify-around footer p-10 bg-neutral text-neutral-content"
+    >
       <aside>
         <Image
           src="/images/streamingBDIcon.svg"

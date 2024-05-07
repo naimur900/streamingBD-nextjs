@@ -23,13 +23,14 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/allSub/chatgpt/page.jsx",
-    "app/allSub/netflix/page.jsx",
+    "app/allSub/aiTools/page.jsx",
+    "app/allSub/videoStreamingServices/page.jsx",
     "app/allSub/hbomax/page.jsx",
-    "app/allSub/ytmusic/page.jsx",
-    "app/allSub/vpn/page.jsx",
+    "app/allSub/musicStreamingServices/page.jsx",
+    "app/allSub/vpnServices/page.jsx",
     "app/allSub/spotify/page.jsx",
-    "app/allSub/prime/page.jsx"
+    "app/allSub/prime/page.jsx",
+    ".next/types/app/allSub/combo/page.ts"
   ],
   "exclude": ["node_modules"]
 }

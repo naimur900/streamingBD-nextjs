@@ -6,25 +6,17 @@ const page = () => {
   return (
     <>
       {/* <Carousel/> */}
-      <SubscriptionBox img="/images/netflix-min.jpg" id={"netflix}"} headline={"NETFLIX"} price={"249"} endpoint={"netflix"} detail={"Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime."}/>
+      <SubscriptionBox img="/images/videoStreamingServices-min.jpg" id={"videoStreamingServices}"} headline={"Video Streaming Services"} price={"249"} endpoint={"videoStreamingServices"} detail={"Netlfix, prime video, disney plus, hbo max, hotstar, hoichoi and so on.Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime."}/>
 
-      <SubscriptionBox2 img="/images/amazon-prime-min.jpg" id={"amazon"} headline={"AMAZON PRIME"} price={"99"} endpoint={"prime"} detail={"Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime."}/>
+      <SubscriptionBox2 img="/images/musicStreamingServices-min.jpg" id={"musicStreamingServices"} headline={"Music Streaming Services"} price={"99"} endpoint={"musicStreamingServices"} detail={"Spotify, youtube music and so on. Listen anywhere. Cancel anytime."}/>
 
-      <SubscriptionBox img="/images/yt-music.jpg" id={"ytmusic"} headline={"YOUTUBE PREMIUM"} price={"99"} endpoint={"ytmusic"} detail={"Listen anywhere. Cancel anytime."}/>
+      <SubscriptionBox img="/images/educationalServices-min.png" id={"educationalServices"} headline={"Educational Services"} price={"99"} endpoint={"educationalServices"} detail={"Grammarly, quillbot and so on. Make your writing beautiful, professional and concise."}/>
 
-      <SubscriptionBox2 img="/images/spotify.jpg" id={"spotify"} headline={"SPOTIFY"} price={"159"} endpoint={"spotify"} detail={"Listen anywhere. Cancel anytime."}/>
+      <SubscriptionBox2 img="/images/vpnServices-min.jpg" id={"vpnServices"} headline={"VPN Services"} endpoint={"vpnServices"} price={"499"} detail={"Nord VPN, surfshark VPN, windscribe VPN and so on. Acces to every site throughout the web"}/>
 
-      <SubscriptionBox img="/images/hbo-max.jpg" id={"hbomax"} headline={"HBO MAX"} price={"199"} endpoint={"hbomax"} detail={"Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime."}/>
-
-      <SubscriptionBox2 img="/images/chatgpt1.jpg" id={"chatgpt"} headline={"CHAT GPT+"} endpoint={"chatgpt"} price={"499"} detail={"Play with AI"}/>
-
-      <SubscriptionBox img="/images/disneyplus1.jpg" id={"disneyplus"} headline={"DISNEY+"} endpoint={"disneyplus"} price={"199"} detail={"Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime."}/>
-
-      <SubscriptionBox2 img="/images/quillbotpremium1.jpg" id={"quillbot"} headline={"QUILLBOT PREMIUM"} endpoint={"quillbot"} price={"599"} detail={"Make your writing beautiful, professional and concise."}/>
+      <SubscriptionBox img="/images/aiTools-min.jpg" id={"aiTools"} headline={"AI Tools"} endpoint={"aiTools"} price={"499"} detail={"Chat GPT+. Play with AI. Make life easier and convinient"}/>
       
-      <SubscriptionBox img="/images/vpn1.jpg" id={"vpn"} headline={"VPN"} endpoint={"vpn"} price={"499"} detail={"Acces to every site throughout the web"}/>
-
-      <SubscriptionBox2 img="/images/combo1.jpg" id={"combo"} headline={"COMBO"} endpoint={"combo"} price={"299"} detail={"Purchase multiple subscribtion at the same time with combo packages"}/>
+      {/* <SubscriptionBox2 img="/images/combo1.jpg" id={"comboServices"} headline={"Combo Services"} endpoint={"comboServices"} price={"299"} detail={"Purchase multiple subscribtion at the same time with combo packages"}/> */}
 
     </>
 
