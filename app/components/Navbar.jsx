@@ -35,6 +35,20 @@ const dropDownOptionVariant = {
   },
 };
 
+const cartVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 1.5,
+      delay: 0.1,
+    },
+  },
+};
+
 const Navbar = () => {
   const value = useCart();
   const { cartState } = value;
@@ -50,7 +64,7 @@ const Navbar = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div className="navbar bg-neutral">
+    <div className="navbar bg-neutral sticky top-0 z-50">
       <div className="navbar-start ">
         <div
           className="dropdown"
@@ -201,7 +215,14 @@ const Navbar = () => {
         {cartState.cart.length > 0 ? (
           <Link href="/cart" className="btn">
             CART
-            <div className="badge badge-secondary">{cartState.cart.length}</div>
+            <motion.div
+              className="badge badge-secondary"
+              variants={cartVariant}
+              initial="hidden"
+              animate="visible"
+            >
+              {cartState.cart.length}
+            </motion.div>
           </Link>
         ) : (
           <Link href="/cart" className="btn">

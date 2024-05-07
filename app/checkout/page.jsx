@@ -1,5 +1,20 @@
-// import bkashImage from "."; // Import the image
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
+
+const bkashQRVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 1.5,
+      delay: 0.1,
+    },
+  },
+};
 
 const page = ({ searchParams }) => {
   const totalPrice = searchParams.totalPrice;
@@ -9,14 +24,19 @@ const page = ({ searchParams }) => {
       <div className="flex flex-col items-center m-10 text-center gap-10 md:m-20 md:flex-row md:gap-0">
         <div className="flex flex-col items-center md:w-1/2 lg:w-1/3">
           <h1 className="my-5 text-lg font-bold">CHECKOUT</h1>
-          <figure className="object-cover w-3/4 overflow-hidden rounded-3xl md:p-0">
+          <motion.div
+            className="object-cover w-3/4 overflow-hidden rounded-3xl md:p-0"
+            variants={bkashQRVariant}
+            initial="hidden"
+            animate="visible"
+          >
             <Image
-              src="/images/bkash.jpg"
+              src="/images/bkash-min.jpg"
               height={"700"}
               width={"700"}
               alt=""
             />
-          </figure>
+          </motion.div>
         </div>
         <div className="flex flex-col items-center md:w-1/2 lg:w-2/3">
           <div className="font-semibold my-5">

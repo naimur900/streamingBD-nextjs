@@ -21,6 +21,27 @@ const subscriptionBoxVarint = {
   },
 };
 
+const alertVariant = {
+  hidden: {
+    opacity: 0,
+    x: "100vw",
+    // transition: {
+    //   type: "spring",
+    //   duration: 0.4,
+    //   delay: 0.1,
+    // },
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 0.4,
+      delay: 0.1,
+    },
+  },
+};
+
 const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
   console.log(monthPriceDict);
   const [finalPrice, setFinalPrice] = useState("Choose Your Plan");
@@ -68,18 +89,20 @@ const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
   };
 
   const handleAddToCart = () => {
-    const month = selectedMonth;
-    cartDispatch({
-      type: "ADD-TO-CART",
-      payload: { id, name, month, finalPrice },
-    });
+    if (Number.isInteger(finalPrice)) {
+      const month = selectedMonth;
+      cartDispatch({
+        type: "ADD-TO-CART",
+        payload: { id, name, month, finalPrice },
+      });
 
-    setShowAlert(true);
+      setShowAlert(true);
 
-    // Hide the alert after 3 seconds (adjust timeout as needed)
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 2000);
+      // Hide the alert after 3 seconds (adjust timeout as needed)
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 2000);
+    }
   };
 
   return (
@@ -207,7 +230,13 @@ const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
           </div>
 
           {showAlert && (
-            <div role="alert" className="flex alert alert-success md:w-56">
+            <motion.div
+              role="alert"
+              className="flex alert alert-success md:w-56"
+              variants={alertVariant}
+              initial="hidden"
+              animate="visible"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="stroke-current shrink-0 h-6 w-6"
@@ -222,7 +251,7 @@ const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
                 />
               </svg>
               <span>Added to cart!</span>
-            </div>
+            </motion.div>
           )}
         </div>
       </motion.div>
