@@ -1,8 +1,9 @@
 import Details from "../../components/Details";
 
 const page = () => {
-  const img = "/images/allSVG/quillbot.svg";
+  const img = "/images/allSVG/grammarly.svg";
   const monthPriceDict = {
+    3: ["399"],
     6: ["699"],
     12: ["999"],
   };
@@ -10,13 +11,14 @@ const page = () => {
   return (
     <>
       <Details
-        name={"Quillbot Premium"}
+        name={"Grammarly Premium"}
         img={img}
         monthPriceDict={monthPriceDict}
-        id={"QB1"}
+        id={"GP1"}
         isVpn={false}
-        details={`6 months: 699/-
-                  1 Year: 999/-`}
+        details={`3 Months: 399/-
+        6 months profile: 699/-
+        1 year Profile: 999/-`}
       />
     </>
   );

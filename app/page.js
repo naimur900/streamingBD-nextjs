@@ -22,7 +22,7 @@ const page = () => {
 
       <SubscriptionBox2 img="/images/quillbotpremium1.jpg" id={"quillbot"} headline={"QUILLBOT PREMIUM"} endpoint={"quillbot"} price={"599"} detail={"Make your writing beautiful, professional and concise."}/>
       
-      <SubscriptionBox img="/images/vpn1.jpg" id={"vpn"} headline={"NORD VPN"} endpoint={"vpn"} price={"499"} detail={"Acces to every site throughout the web"}/>
+      <SubscriptionBox img="/images/vpn1.jpg" id={"vpn"} headline={"VPN"} endpoint={"vpn"} price={"499"} detail={"Acces to every site throughout the web"}/>
 
       <SubscriptionBox2 img="/images/combo1.jpg" id={"combo"} headline={"COMBO"} endpoint={"combo"} price={"299"} detail={"Purchase multiple subscribtion at the same time with combo packages"}/>
 

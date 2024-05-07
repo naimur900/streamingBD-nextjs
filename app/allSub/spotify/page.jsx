@@ -1,42 +1,26 @@
 import Details from "../../components/Details";
 
 const page = () => {
-  const img = "/images/spotifypremium2.jpg";
+  const img = "/images/allSVG/spotify.svg";
+  const monthPriceDict = {
+    1: ["150"],
+    2: ["499"],
+    6: ["799"],
+    12: ["1399"],
+  };
 
   return (
     <>
       <Details
-        name={"SpotifyPremium-1month"}
+        name={"Spotify"}
         img={img}
-        price={"159"}
+        monthPriceDict={monthPriceDict}
         id={"SP1"}
-        secondScreenOption={false}
-        details={`  Renewable Account
-                    Full Duration Warreanty
-                    Full Playlist & Songs Backup guarantee
-                    Provide Us Spotify Mail pass so that we can activate Spotify On your personal Account`}
-      />
-      <Details
-        name={"SpotifyPremium-6month"}
-        img={img}
-        price={"799"}
-        id={"SP2"}
-        secondScreenOption={false}
-        details={`  Renewable Account
-                    Full Duration Warreanty
-                    Full Playlist & Songs Backup guarantee
-                    Provide Us Spotify Mail pass so that we can activate Spotify On your personal Account`}
-      />
-      <Details
-        name={"SpotifyPremium-12month"}
-        img={img}
-        price={"1550"}
-        id={"SP3"}
-        secondScreenOption={false}
-        details={`  Renewable Account
-                    Full Duration Warreanty
-                    Full Playlist & Songs Backup guarantee
-                    Provide Us Spotify Mail pass so that we can activate Spotify On your personal Account`}
+        isVpn={false}
+        details={`1 Month: 150tk (Personal Mail)
+                  3 Months: 499tk (Personal Mail)
+                  6 Months: 799tk (Personal Mail)
+                  12 Months: 1399tk (Personal Mail)`}
       />
     </>
   );

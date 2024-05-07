@@ -1,45 +1,52 @@
 import Details from "../../components/Details";
 
 const page = () => {
-  const img = "/images/vpn2.jpg";
+  const imgNord = "/images/allSVG/nordvpn.svg";
+  const imgSurfshark = "/images/allSVG/surfsharkvpn.svg";
+  const imgWindscribe = "/images/allSVG/windscribevpn.svg";
+  const monthPriceDictSurfshark = {
+    12: ["799"],
+    24: ["800"],
+  };
+  const monthPriceDictNord = {
+    12: ["550"],
+    24: ["1299"],
+  };
+  const monthPriceDictWindscribe = {
+    12: ["800"],
+    36: ["1299"],
+  };
 
   return (
     <>
       <Details
-        name={"NordVPN-6month"}
-        img={img}
-        price={"499"}
-        id={"VP1"}
-        secondScreenOption={true}
-        details={`  Device Limitation [ Max 2 Device ]
-                    Login With E-mail And Password
-                    Multiple Device’s Login [ Tv/Laptop/Mobile ]
-                    Full Duration Instant Replce Warranty
-                    প্রতিটি একাউন্ট সম্পুর্ণ অফিসিয়াল তাই কোনো প্রকার ঝামেলা ছাড়াই  ব্যাবহার করতে পারবেন`}
+        name={"Nord VPN"}
+        img={imgNord}
+        monthPriceDict={monthPriceDictNord}
+        id={"NV1"}
+        isVpn={false}
+        details={`12 months: 550 Taka (2 Device)
+                  24 months All access unlocked: 800/- (2 device)`}
+      />
+
+      <Details
+        name={"Surfshark VPN"}
+        img={imgSurfshark}
+        monthPriceDict={monthPriceDictSurfshark}
+        id={"SS1"}
+        isVpn={false}
+        details={`12 months: 800/- (2 device)
+                  36 months: 1500/- (3 device)
+                  (Vpn Created With Gift Card 100% official account)`}
       />
       <Details
-        name={"NordVPN-12month"}
-        img={img}
-        price={"799"}
-        id={"VP2"}
-        secondScreenOption={false}
-        details={`  Device Limitation [ Max 2 Device ]
-                    Login With E-mail And Password
-                    Multiple Device’s Login [ Tv/Laptop/Mobile ]
-                    Full Duration Instant Replce Warranty
-                    প্রতিটি একাউন্ট সম্পুর্ণ অফিসিয়াল তাই কোনো প্রকার ঝামেলা ছাড়াই  ব্যাবহার করতে পারবেন`}
-      />
-      <Details
-        name={"NordVPN-24month"}
-        img={img}
-        price={"1399"}
-        id={"VP3"}
-        secondScreenOption={false}
-        details={`  Device Limitation [ Max 2 Device ]
-                    Login With E-mail And Password
-                    Multiple Device’s Login [ Tv/Laptop/Mobile ]
-                    Full Duration Instant Replce Warranty
-                    প্রতিটি একাউন্ট সম্পুর্ণ অফিসিয়াল তাই কোনো প্রকার ঝামেলা ছাড়াই  ব্যাবহার করতে পারবেন`}
+        name={"Windscribe VPN"}
+        img={imgWindscribe}
+        monthPriceDict={monthPriceDictWindscribe}
+        id={"WV1"}
+        isVpn={false}
+        details={`12 Months Package: 799/-
+        24 Months Package: 1299/-`}
       />
     </>
   );
