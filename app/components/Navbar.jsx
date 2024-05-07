@@ -104,7 +104,7 @@ const Navbar = () => {
             animate={isDropdownOpen ? "visible" : "hidden"} // Update animate property based on dropdown state
             variants={dropDownVarint} // Update variants property
             tabIndex={0}
-            className={`menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-neutral rounded-box w-52 border-2 border-solid`}
+            className={`menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-neutral rounded-box w-60 border-2 border-solid`}
           >
             <motion.li variants={dropDownOptionVariant}>
               <Link onClick={(e) => handleDropdownOption(e)} href="/">
