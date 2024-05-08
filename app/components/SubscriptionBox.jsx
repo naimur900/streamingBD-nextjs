@@ -37,7 +37,7 @@ const SubscriptionBox = ({ img, id, headline, price, detail, endpoint }) => {
           <Image src={img} width="700" height="700" alt="" />
         </figure>
         <div className="w-5/6 m-2 p-5 flex flex-col items-center sm:m-0 sm:w-1/2 2xl:p-16 relative -top-16 bg-slate-500 backdrop-blur-sm bg-white/10 rounded-3xl sm:top-0 sm:right-16">
-          <div>
+          <div className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
             <h2 className="text-primary text-lg font-bold lg:text-xl xl:text-2xl 2xl:text-3xl">
               {headline}
             </h2>
@@ -47,7 +47,9 @@ const SubscriptionBox = ({ img, id, headline, price, detail, endpoint }) => {
             <p className="xl:text-lg">{detail}</p>
           </div>
           <Link href={`/allSub/${endpoint}`}>
-            <Button classes={"btn btn-primary font-bold my-7 xl:text-lg"}>
+            <Button
+              classes={"btn btn-primary font-bold my-7 xl:text-lg shadow"}
+            >
               BUY NOW
             </Button>
           </Link>
