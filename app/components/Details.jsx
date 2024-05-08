@@ -25,11 +25,6 @@ const alertVariant = {
   hidden: {
     opacity: 0,
     x: "100vw",
-    // transition: {
-    //   type: "spring",
-    //   duration: 0.4,
-    //   delay: 0.1,
-    // },
   },
   visible: {
     x: 0,
@@ -44,7 +39,7 @@ const alertVariant = {
 
 const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
   console.log(monthPriceDict);
-  const [finalPrice, setFinalPrice] = useState("Choose Your Plan");
+  const [finalPrice, setFinalPrice] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [selectedMonth, setSelectedMonth] = useState("");
   // if (isVpn) {
@@ -134,7 +129,9 @@ const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
                   Taka
                 </div>
               ) : (
-                <div className="md:text-lg text-secondary">{finalPrice}</div>
+                <div className="md:text-lg text-secondary">
+                  Choose Your Plan
+                </div>
               )}
             </div>
             <div className="md:w-3/6 flex flex-col md:items-end md:text-center">
