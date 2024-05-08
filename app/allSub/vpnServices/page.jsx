@@ -1,9 +1,17 @@
 import Details from "../../components/Details";
+import TopLinks from "../../components/TopLinks";
 
 const page = () => {
   const imgNord = "/images/allSVG/nordvpn.svg";
   const imgSurfshark = "/images/allSVG/surfsharkvpn.svg";
   const imgWindscribe = "/images/allSVG/windscribevpn.svg";
+
+  const svgs = {
+    NV1: { img: imgNord },
+    SS1: { img: imgSurfshark },
+    WV1: { img: imgWindscribe },
+  };
+
   const monthPriceDictSurfshark = {
     12: ["799"],
     24: ["800"],
@@ -19,6 +27,8 @@ const page = () => {
 
   return (
     <>
+      <TopLinks svgs={svgs} page={"vpnServices"} />
+
       <Details
         name={"Nord VPN"}
         img={imgNord}

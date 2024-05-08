@@ -1,11 +1,22 @@
 import Details from "../../components/Details";
+import TopLinks from "../../components/TopLinks";
 
 const page = () => {
   const imgNetflix = "/images/allSVG/netflix.svg";
+  const imgNetflix2 = "/images/allSVG/netflix2.svg";
   const imgPrimeVideo = "/images/allSVG/primevideo.svg";
+  const imgPrimeVideo2 = "/images/allSVG/primevideo2.svg";
   const imgHboMax = "/images/allSVG/hbomax.svg";
   const imgDisneyPlus = "/images/allSVG/disneyplus.svg";
   const imgCrunchyRoll = "/images/allSVG/crunchyroll.svg";
+
+  const svgs = {
+    NF1: { img: imgNetflix2 },
+    PV1: { img: imgPrimeVideo2 },
+    HM1: { img: imgHboMax },
+    DP1: { img: imgDisneyPlus },
+    CR1: { img: imgCrunchyRoll },
+  };
 
   const monthPriceDictNetflix = {
     1: ["250"],
@@ -45,6 +56,8 @@ const page = () => {
 
   return (
     <>
+      <TopLinks svgs={svgs} page={"videoStreamingServices"} />
+
       <Details
         name={"Netflix"}
         img={imgNetflix}

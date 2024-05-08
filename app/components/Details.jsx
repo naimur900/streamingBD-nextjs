@@ -108,6 +108,7 @@ const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
   return (
     <>
       <motion.div
+        id={id}
         variants={subscriptionBoxVarint}
         initial="hidden"
         whileInView="visible"

@@ -1,10 +1,19 @@
 import Details from "../../components/Details";
+import TopLinks from "../../components/TopLinks";
 
 const page = () => {
   const imgYoutubePremium = "/images/allSVG/youtubepremium.svg";
   const imgYoutubePremiumPlusMusic = "/images/allSVG/youtubemusic.svg";
   const imgSpotify = "/images/allSVG/spotify.svg";
   const imgAppleMusic = "/images/allSVG/applemusic.svg";
+  const imgAppleMusic2 = "/images/allSVG/applemusic2.svg";
+
+  const svgs = {
+    SP1: { img: imgSpotify },
+    YP1: { img: imgYoutubePremium },
+    YM1: { img: imgYoutubePremiumPlusMusic },
+    AM1: { img: imgAppleMusic2 },
+  };
 
   const monthPriceDictSpotify = {
     1: ["150"],
@@ -30,6 +39,8 @@ const page = () => {
 
   return (
     <>
+      <TopLinks svgs={svgs} page={"musicStreamingServices"} />
+
       <Details
         name={"Spotify"}
         img={imgSpotify}
@@ -60,7 +71,7 @@ const page = () => {
         name={"Youtube Premim + Music"}
         img={imgYoutubePremiumPlusMusic}
         monthPriceDict={monthPriceDictYoutubePremiumPlusMusicd}
-        id={"YM!"}
+        id={"YM1"}
         isVpn={false}
         details={`3 Months  420/-
                   6 Months   750/-

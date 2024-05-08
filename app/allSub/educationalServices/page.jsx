@@ -1,9 +1,16 @@
 import Details from "../../components/Details";
+import TopLinks from "../../components/TopLinks";
 
 const page = () => {
   const imgGrammarly = "/images/allSVG/grammarly.svg";
   const imgQuillbot = "/images/allSVG/quillbot.svg";
   const imgCanvaPro = "/images/allSVG/canva.svg";
+
+  const svgs = {
+    GP1: { img: imgGrammarly },
+    QB1: { img: imgQuillbot },
+    CP1: { img: imgCanvaPro },
+  };
 
   const monthPriceDictGrammarly = {
     3: ["399"],
@@ -23,6 +30,8 @@ const page = () => {
 
   return (
     <>
+      <TopLinks svgs={svgs} page={"educationalServices"} />
+
       <Details
         name={"Grammarly Premium"}
         img={imgGrammarly}
@@ -48,7 +57,7 @@ const page = () => {
         name={"Canva"}
         img={imgCanvaPro}
         monthPriceDict={monthPriceDictQuillbot}
-        id={"CP"}
+        id={"CP1"}
         isVpn={false}
         details={`Personal Mail
                   6 months personal mail - 199/-

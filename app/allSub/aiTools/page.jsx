@@ -1,16 +1,23 @@
 import Details from "../../components/Details";
+import TopLinks from "../../components/TopLinks";
 
 const page = () => {
-  const img = "/images/allSVG/chatgpt.svg";
+  const imgChatGpt = "/images/allSVG/chatgpt.svg";
+  const svgs = {
+    CG1: { img: imgChatGpt },
+  };
+
   const monthPriceDict = {
     1: ["499"],
   };
 
   return (
     <>
+      <TopLinks svgs={svgs} page={"aiTools"} />
+
       <Details
         name={"Chat GPT"}
-        img={img}
+        img={imgChatGpt}
         monthPriceDict={monthPriceDict}
         id={"CG1"}
         isVpn={false}
