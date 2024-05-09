@@ -1,9 +1,9 @@
 "use client";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { CartContext } from "./cartContext";
 
 const cartReducer = (cartState, action) => {
-  console.log(cartState);
+  // console.log(cartState);
 
   switch (action.type) {
     case "ADD-TO-CART":
@@ -38,6 +38,25 @@ const intialState = { cart: [] };
 
 const CartContextProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, intialState);
+
+  useEffect(() => {
+    let storedCart = localStorage.getItem("cart");
+    storedCart = JSON.parse(storedCart);
+
+    if (storedCart) {
+      for (let i = 0; i < storedCart.length; i++) {
+        cartDispatch({
+          type: "ADD-TO-CART",
+          payload: storedCart[i],
+        });
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("cart", JSON.stringify(cartState.cart));
+    // console.log(cartState);
+  }, [cartState]);
 
   return (
     <CartContext.Provider value={{ cartState, cartDispatch }}>
