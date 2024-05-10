@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
 
-const subscriptionBoxVarint = {
+const categoryBoxVarint = {
   hidden: {
     opacity: 0,
     scale: 0.3,
@@ -22,13 +22,11 @@ const subscriptionBoxVarint = {
   },
 };
 
-// const bu
-
-const SubscriptionBox2 = ({ img, id, headline, price, detail, endpoint }) => {
+const CategoryBox2 = ({ img, id, headline, price, detail, endpoint }) => {
   return (
     <>
       <motion.div
-        variants={subscriptionBoxVarint}
+        variants={categoryBoxVarint}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -61,4 +59,4 @@ const SubscriptionBox2 = ({ img, id, headline, price, detail, endpoint }) => {
   );
 };
 
-export default SubscriptionBox2;
+export default CategoryBox2;

@@ -30,7 +30,8 @@
     "app/allSub/vpnServices/page.jsx",
     "app/allSub/spotify/page.jsx",
     "app/allSub/prime/page.jsx",
-    ".next/types/app/allSub/combo/page.ts"
+    ".next/types/app/allSub/combo/page.ts",
+    "app/api/sslc/route.js"
   ],
   "exclude": ["node_modules"]
 }

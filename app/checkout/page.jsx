@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { useCart } from "../context/cartContext";
 
 const bkashQRVariant = {
   hidden: {
@@ -18,7 +20,35 @@ const bkashQRVariant = {
 
 const page = ({ searchParams }) => {
   const totalPrice = searchParams.totalPrice;
+  const value = useCart();
+  const { cartDispatch } = value;
   console.log(totalPrice);
+
+  const {
+    register,
+    handleSubmit,
+    // watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    cartDispatch({
+      type: "REMOVE-ALL",
+    });
+    // console.log({ ...data, price: totalPrice });
+    // fetch("/api/sslc", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ ...data, price: totalPrice }),
+    // });
+  };
+
+  // console.log(watch("email"));
+  // console.log(watch("senderName"));
+  // console.log(watch("phoneNumber"));
+  // console.log(watch("reference"));
+
   return (
     <>
       <div className="flex flex-col items-center m-10 text-center gap-10 md:m-20 md:flex-row md:gap-0">
@@ -39,63 +69,65 @@ const page = ({ searchParams }) => {
           </motion.div>
         </div>
         <div className="flex flex-col items-center md:w-1/2 lg:w-2/3">
-          <div className="font-semibold my-5">
-            <h1>
-              Total Price: <span className="font-extrabold">{totalPrice}</span>
-            </h1>
-            <h1>Kindly pay first and then fill up the form</h1>
+          <div className="font-semibold my-5 flex flex-col gap-4">
+            <div>
+              <h1>
+                Total Price:{" "}
+                <span className="font-extrabold text-primary">
+                  {totalPrice} tk
+                </span>
+              </h1>
+              <h1>Kindly pay first and then fill up the form</h1>
+            </div>
+            <div>
+              <a
+                target="_blank"
+                aria-label="Chat on WhatsApp"
+                href="https://wa.me/+8801521566835"
+              >
+                {" "}
+                <Image
+                  className="mx-auto"
+                  src={"/images/WhatsAppButtonGreenSmall.svg"}
+                  height="170"
+                  width="170"
+                />
+              </a>
+            </div>
           </div>
 
-          <form
-            action="https://formsubmit.co/0acc9e3a5483bb07974ac6d78509caad"
-            method="POST"
-            target="_blank"
-          >
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col gap-3 w-full items-center">
-              <input
-                type="text"
-                placeholder="Name"
-                name="name"
-                className="input input-bordered input-primary w-full max-w-xs"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="input input-bordered input-primary w-full max-w-xs"
-                required
-              />
-              <input
-                type="hidden"
-                name="_subject"
-                value="New submission!"
-              ></input>
-              <input
-                type="text"
-                placeholder="Phone Number"
-                name="phoneNumber"
-                className="input input-bordered input-primary w-full max-w-xs"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Transaction ID"
-                name="trxID"
-                className="input input-bordered input-primary w-full max-w-xs"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Reference"
-                name="reference"
-                className="input input-bordered input-primary w-full max-w-xs"
-              />
-              <input type="hidden" name="_template" value="table"></input>
+              <div>
+                <h1>Name</h1>
+                <input
+                  className="btn btn-outline"
+                  {...register("senderName", { required: true })}
+                />
+              </div>
+              <div>
+                <h1>Email</h1>
+                <input
+                  className="btn btn-outline"
+                  {...register("email", { required: true })}
+                />
+              </div>
+              <div>
+                <h1>Phone Number</h1>
+                <input
+                  className="btn btn-outline"
+                  {...register("phoneNumber", { required: true })}
+                />
+              </div>
+              <div>
+                <h1>Reference</h1>
+                <input className="btn btn-outline" {...register("reference")} />
+              </div>
+              {errors.exampleRequired && (
+                <span className="text-white">This field is required</span>
+              )}
 
-              <button className="btn btn-primary" type="submit">
-                SUBMIT
-              </button>
+              <input className="btn btn-primary w-20" type="submit" />
             </div>
           </form>
         </div>

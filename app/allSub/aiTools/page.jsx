@@ -1,33 +1,27 @@
 import Details from "../../components/Details";
 import TopLinks from "../../components/TopLinks";
+import data from "../../utils/data.json";
 
 const page = () => {
-  const imgChatGpt = "/images/allSVG/chatgpt.svg";
-  const svgs = {
-    CG1: { img: imgChatGpt },
-  };
-
-  const monthPriceDict = {
-    1: ["499"],
-  };
+  const aiTools = Object.values(data).filter(
+    (entry) => entry.category === "aiTools"
+  );
 
   return (
     <>
-      <TopLinks svgs={svgs} page={"aiTools"} />
+      <TopLinks service={aiTools} />
 
-      <Details
-        name={"Chat GPT"}
-        img={imgChatGpt}
-        monthPriceDict={monthPriceDict}
-        id={"CG1"}
-        isVpn={false}
-        details={`Limit 40 Massage Per 3 hours As per there Plan
-        Multi-Device Access: Enjoy login capability on up to 2 devices simultaneously.
-        Shared Subscription.
-        Instant Setup: You will be given a ready-made email and password.
-        Access to Latest Versions: Utilize both ChatGPT 3.5 and ChatGPT 4 for enhanced AI capabilities.
-        Enjoy a complete replacement warranty throughout the subscription period.`}
-      />
+      {aiTools.map((subscription) => (
+        <Details
+          key={subscription.id} // Ensure each element has a unique key
+          name={subscription.name}
+          img={subscription.img[0]} // This should be dynamic based on the subscription
+          monthPriceDict={subscription.prices}
+          id={subscription.id}
+          isVpn={subscription.is_vpn} // Ensure this property exists in your data
+          details={subscription.details}
+        />
+      ))}
     </>
   );
 };

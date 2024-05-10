@@ -19,7 +19,7 @@ const topLinkVariant = {
   },
 };
 
-const TopLinks = ({ svgs, page }) => {
+const TopLinks = ({ service }) => {
   return (
     <motion.div
       className="flex items-center justify-center gap-7"
@@ -27,11 +27,16 @@ const TopLinks = ({ svgs, page }) => {
       initial="hidden"
       animate="visible"
     >
-      {Object.entries(svgs).map(([key, value]) => (
-        <Link key={key} href={`${page}/#${key}`}>
+      {service.map((subscription) => (
+        <Link
+          key={subscription.category}
+          href={`${subscription.category}/#${subscription.id}`}
+        >
           <Image
             className="w-9 sm:w-12 md:w-14 mt-14"
-            src={value.img}
+            src={
+              subscription.img[1] ? subscription.img[1] : subscription.img[0]
+            }
             width={50}
             height={50}
           />

@@ -29,6 +29,13 @@ const cartReducer = (cartState, action) => {
         ),
       };
 
+    case "REMOVE-ALL": {
+      return {
+        ...cartState,
+        cart: [],
+      };
+    }
+
     default:
       return cartState;
   }

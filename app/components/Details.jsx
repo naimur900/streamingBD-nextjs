@@ -38,11 +38,10 @@ const alertVariant = {
 };
 
 const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
-  console.log(monthPriceDict);
+  // console.log(img, name, monthPriceDict, id, details, isVpn);
   const [finalPrice, setFinalPrice] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [selectedMonth, setSelectedMonth] = useState("");
-  // if (isVpn) {
   const [isVpnButtonSelect, setIsVpnButtonSelect] = useState("");
 
   useEffect(() => {
