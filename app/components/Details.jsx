@@ -194,7 +194,7 @@ const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
           <hr />
           <div className="my-3 lg:text-base">
             <ul className="text-white list-disc px-6">
-              {details.split("\n").map((detail, index) => (
+              {details.split("\\n").map((detail, index) => (
                 <li key={index}>{detail.trim()}</li>
               ))}
             </ul>
