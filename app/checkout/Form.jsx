@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useCart } from "../context/cartContext";
