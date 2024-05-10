@@ -31,7 +31,7 @@ const CategoryBox2 = ({ img, id, headline, price, detail, endpoint }) => {
         whileInView="visible"
         viewport={{ once: true }}
         id={id}
-        className="container mx-auto flex flex-col items-center px-[6%] my-[10%] sm:flex-row sm:px-[0%] md:px-[0%] lg:px-[12%]"
+        className="container mx-auto flex flex-col-reverse items-center px-[6%] my-[10%] sm:flex-row sm:px-[0%] md:px-[0%] lg:px-[12%]"
       >
         <div className="w-5/6 m-2 p-5 flex flex-col items-center sm:m-0 sm:w-1/2 2xl:p-16 relative -top-16 bg-slate-500 backdrop-blur-sm sm:z-10 bg-white/5 rounded-3xl sm:top-0 sm:left-16">
           <div className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
