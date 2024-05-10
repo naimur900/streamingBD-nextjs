@@ -31,7 +31,8 @@ const CategoryBox = ({ img, id, headline, price, detail, endpoint }) => {
         whileInView="visible"
         viewport={{ once: true }}
         id={id}
-        className="flex flex-col items-center m-5 sm:flex-row w-fit sm:justify-start md:m-12 lg:m-20 xl:m-32"
+        // sm:flex-row w-fit sm:justify-start md:m-12 lg:m-20 xl:m-32
+        className="container mx-auto flex flex-col items-center px-[6%] my-[10%] sm:flex-row sm:px-[0%] md:px-[0%] lg:px-[12%]"
       >
         <figure className="object-cover overflow-hidden rounded-3xl w-full sm:m-5 sm:w-1/2 sm:relative sm:left-16 shadow-2xl">
           <Image src={img} width="700" height="700" alt="" />

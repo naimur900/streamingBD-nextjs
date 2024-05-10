@@ -107,15 +107,21 @@ const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex flex-col justify-center items-center md:flex-row mx-7 my-16 md:gap-6 lg:gap-8 md:mx-0 lg:mx-16 lg:px-10 xl:mx-24 xl:px-14"
+        className="container flex mx-auto flex-col items-center justify-center md:my-[6%] lg:my-[10%] px-[6%] sm:px-[10%] md:px-[14%] lg:flex-row lg:px-[4%] xl:px-[14%]"
       >
-        <figure className="w-3/4 md:w-1/2 relative md:left-16">
-          <Image className="" src={img} height={"400"} width={"400"} alt="" />
+        <figure className="lg:w-1/2 relative lg:left-20">
+          <Image
+            className="px-[14%]"
+            src={img}
+            height={"400"}
+            width={"400"}
+            alt=""
+          />
         </figure>
 
-        <div className="flex flex-col md:w-1/2 justify-center relative -top-20 bg-slate-500 backdrop-blur-sm bg-white/5 p-7 rounded-3xl z-1 md:top-0 md:-left-16">
-          <div className="flex flex-col sm:flex-row gap-3 justify-between my-3">
-            <div className="md:w-3/6 font-bold text-primary py-3 md:self-end">
+        <div className="flex flex-col justify-center relative -top-20 bg-slate-500 backdrop-blur-sm bg-white/5 p-6 rounded-3xl z-1 lg:top-0 lg:w-1/2 lg:right-20">
+          <div className="flex flex-col sm:flex-row justify-between my-2">
+            <div className="md:w-3/6 font-bold text-primary lg:py-3 md:self-end">
               <div className="text-white text-xl drop-shadow-2xl md:text-3xl">
                 {name}
               </div>
@@ -136,7 +142,7 @@ const Details = ({ img, name, monthPriceDict, id, details, isVpn }) => {
             <div className="md:w-3/6 flex flex-col md:items-end md:text-center">
               <div className="md:mb-5">
                 <p className="text-xs ">Select months</p>
-                <div className="flex gap-2 py-3">
+                <div className="flex gap-2 pt-3">
                   {Object.entries(monthPriceDict).map(([month, price]) => (
                     <button
                       key={month}
