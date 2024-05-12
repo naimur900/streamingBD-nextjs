@@ -41,9 +41,8 @@ const cartReducer = (cartState, action) => {
   }
 };
 
-const intialState = { cart: [] };
-
 const CartContextProvider = ({ children }) => {
+  const intialState = { cart: [] };
   const [cartState, cartDispatch] = useReducer(cartReducer, intialState);
 
   useEffect(() => {
