@@ -24,10 +24,10 @@ const CartPage = () => {
 
   return (
     <>
-      {/* overflow-x-auto my-16 md:p-24 md:m-10 */}
-      <div className="container mx-auto overflow-x-auto px-[4%] my-[10%]">
-        {cart.length > 0 ? (
-          <>
+      {cart.length > 0 ? (
+        <>
+          <div className="container flex flex-col gap-14 h-svh mx-auto overflow-x-auto my-[12%] px-[4%]">
+            <h1 className="text-center font-extrabold text-2xl">Cart</h1>
             <table className="table">
               <thead>
                 <tr className="text-center md:font-extrabold md:text-lg">
@@ -51,7 +51,7 @@ const CartPage = () => {
                 })}
               </tbody>
             </table>
-            <div className="flex justify-center items-center my-16 gap-3 m-5 font-extrabold">
+            <div className="flex justify-between items-center font-extrabold px-[8%] mb-[16%]">
               <div className="w-3/4 md:text-lg">
                 <h3>Total: {totalPrice}</h3>
                 <h3>Total Item: {totalItem}</h3>
@@ -60,13 +60,11 @@ const CartPage = () => {
                 <button className="btn btn-warning font-bold">Checkout</button>
               </Link>
             </div>
-          </>
-        ) : (
-          <>
-            <h1 className="text-center h-screen">Your cart is empty</h1>
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      ) : (
+        <h1 className="text-center h-screen">Your cart is empty</h1>
+      )}
     </>
   );
 };
