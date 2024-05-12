@@ -34,7 +34,7 @@ const Form = ({ totalPrice }) => {
 
   const onSubmit = (data) => {
     console.log({ ...data, price: totalPrice });
-    fetch("http://localhost:3030/payment/init", {
+    fetch("https://streaming-bd-backend.vercel.app/payment/init", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
