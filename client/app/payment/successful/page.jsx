@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useCart } from "../../context/cartContext";
 import PaymentRes from "../PaymentRes";
 
-const page = () => {
+const Page = () => {
   const { cartDispatch } = useCart();
 
   useEffect(() => {
@@ -21,4 +21,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
