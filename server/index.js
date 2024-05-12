@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://streaming-bd-nextjs.vercel.app/',
   credentials: true
 }));
 
@@ -43,5 +43,5 @@ app.use("/payment",validateRouter)
 
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Server is running at port:${port}`)
 })
