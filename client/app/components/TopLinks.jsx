@@ -22,7 +22,7 @@ const topLinkVariant = {
 const TopLinks = ({ service }) => {
   return (
     <motion.div
-      className="flex items-center justify-center gap-7"
+      className="flex items-center justify-center gap-7 mb-[10%] md:mb-0"
       variants={topLinkVariant}
       initial="hidden"
       animate="visible"
