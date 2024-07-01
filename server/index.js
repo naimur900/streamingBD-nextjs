@@ -34,6 +34,9 @@ mongoose.connect(mongouri)
   });
 
 
+app.use("/", (req,res)=>{
+  res.send("Hello World!")
+})
 app.use("/payment",initRouter)
 app.use("/payment",successRouter)
 app.use("/payment",failureRouter)
