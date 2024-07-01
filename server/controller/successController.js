@@ -11,7 +11,7 @@ const successController = async (req,res)=>{
     })
 
     if(result.modifiedCount>0){
-        res.redirect(`http://localhost:3000/payment/successful?${req.params.tran_id}`)
+        res.redirect(`https://streaming-bd-nextjs.vercel.app/payment/successful?${req.params.tran_id}`)
     }
 }
 
